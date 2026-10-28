@@ -1,0 +1,27 @@
+# 核心Python依赖
+numpy==1.26.4
+opencv-python==4.11.0.86
+pyrealsense2==2.56.5.9235
+PyYAML==6.0.3
+protobuf==3.20.3
+zstandard==0.18.0
+
+# 通信依赖
+pyzmq==27.1.0
+websockets>=15.0.1
+aiortc==1.14.0
+aiohttp>=3.10.0
+
+# 工具库
+loguru>=0.6.0
+av>=16.1.0
+
+# ROS2相关Python依赖
+empy==3.3.4
+lark==1.1.0
+catkin_pkg
+ament-index-python
+
+# 开发工具
+setuptools>=58.0.0
+wheel>=0.37.0

@@ -1,0 +1,77 @@
+{
+    "network": {
+      "image_server_ip": "192.168.120.44",
+      "image_request_port": 60000,
+      "fastapi_host": "0.0.0.0",
+      "fastapi_port": 8000
+    },
+    "runtime": {
+      "frequency": 60.0,
+      "headless": false,
+      "sim_enabled_default": false,
+      "waist_enabled_default": true,
+      "head_enabled_default": true,
+      "enable_image_server": true
+    },
+    "xr": {
+      "input_mode": "controller",
+      "display_mode": "immersive"
+    },
+    "paths": {
+      "task_dir": "data",
+      "trash_dir": "data/.trash"
+    },
+    "log_manager": {
+      "log_dir": "logs",
+      "level": "INFO",
+      "console": true,
+      "rotation_size_mb": 120,
+      "retention_days": 60,
+      "compression_enabled": true,
+      "encoding": "utf-8"
+    },
+    "recording": {
+      "rerun_log": false,
+      "save_audio": false,
+      "skip_blank_images": true,
+      "color_format": "jpg",
+      "depth_format": "png",
+      "text": {
+        "goal": "RICO 机器人遥操作任务",
+        "desc": "",
+        "steps": ""
+      },
+      "info": {
+        "version": "1.0.0",
+        "author": "rico",
+        "image": {
+          "head_width": 640,
+          "head_height": 480,
+          "fps": 30
+        },
+        "depth": {
+          "head_width": 640,
+          "head_height": 480,
+          "fps": 30
+        },
+        "audio": {
+          "sample_rate": 16000,
+          "channels": 1,
+          "format": "PCM",
+          "bits": 16
+        },
+        "joint_names": {
+          "left_arm": [],
+          "left_ee": [],
+          "right_arm": [],
+          "right_ee": [],
+          "waist": []
+        },
+        "tactile_names": {
+          "left_ee": [],
+          "right_ee": []
+        },
+        "sim_state": ""
+      }
+    }
+  }

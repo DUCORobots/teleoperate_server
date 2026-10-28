@@ -1,0 +1,362 @@
+{
+  "global": {
+    "vision_system": {
+      "node_name": "humanoid_vision_system"
+    },
+    "synchronization": {
+      "sync_tolerance_ms": 5.0
+    }
+  },
+  "head_camera": {
+    "camera_type": "realsensecamera",
+    "model": "D435",
+    "serial_number": "254622075259",
+    "position": "HEAD",
+    "enabled": true,
+    "binocular": false,
+    "streams": {
+      "color": {
+        "enabled": true,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      },
+      "depth": {
+        "enabled": true,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      }
+    },
+    "compression": {
+      "rgb": {
+          "quality": 85,
+          "format": "JPEG"
+      },
+      "depth": {
+          "quantization_bits": 12,
+          "zstd_compression_level": 3
+      }
+    },
+    "publisher_compression": {
+      "zeromq": {
+        "rgb": {
+          "quality": 90,
+          "format": "JPEG"
+        },
+        "depth": {
+          "quantization_bits": 16,
+          "zstd_compression_level": 6
+        }
+      },
+      "webrtc": {
+        "rgb": {
+          "quality": 85,
+          "format": "JPEG"
+        }
+      }
+    },
+    "communication": {
+      "zeromq": {
+        "enabled": true,
+        "image_publish_port": 5555,
+        "status_publish_port": 5556
+      },
+      "websocket": {
+        "enabled": true,
+        "host": "0.0.0.0",
+        "port": 8765
+      },
+      "webrtc": {
+        "enabled": true,
+        "video_codec": "VP8"
+      }
+    }
+  },
+  "left_wrist_camera": {
+    "camera_type": "realsense",
+    "model": "D405",
+    "serial_number": "315122272285",
+    "position": "LEFT_WRIST",
+    "enabled": true,
+    "binocular": false,
+    "streams": {
+      "color": {
+        "enabled": true,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      },
+      "depth": {
+        "enabled": false,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      }
+    },
+    "compression": {
+      "rgb": {
+          "quality": 85,
+          "format": "JPEG"
+      },
+      "depth": {
+          "quantization_bits": 12,
+          "zstd_compression_level": 3
+      }
+    },
+    "publisher_compression": {
+      "zeromq": {
+        "rgb": {
+          "quality": 90,
+          "format": "JPEG"
+        },
+        "depth": {
+          "quantization_bits": 16,
+          "zstd_compression_level": 6
+        }
+      },
+      "webrtc": {
+        "rgb": {
+          "quality": 85,
+          "format": "JPEG"
+        }
+      }
+    },
+    "communication": {
+      "zeromq": {
+        "enabled": true,
+        "image_publish_port": 5557,
+        "status_publish_port": 5558
+      },
+      "websocket": {
+        "enabled": true,
+        "host": "0.0.0.0",
+        "port": 8766
+      },
+      "webrtc": {
+        "enabled": true,
+        "video_codec": "VP8"
+      }
+    }
+  },
+  "right_wrist_camera": {
+    "camera_type": "realsense",
+    "model": "D405",
+    "serial_number": "409122275004",
+    "position": "RIGHT_WRIST",
+    "enabled": true,
+    "binocular": false,
+    "streams": {
+      "color": {
+        "enabled": true,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      },
+      "depth": {
+        "enabled": false,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      }
+    },
+    "compression": {
+      "rgb": {
+          "quality": 85,
+          "format": "JPEG"
+      },
+      "depth": {
+          "quantization_bits": 12,
+          "zstd_compression_level": 3
+      }
+    },
+    "publisher_compression": {
+      "zeromq": {
+        "rgb": {
+          "quality": 90,
+          "format": "JPEG"
+        },
+        "depth": {
+          "quantization_bits": 16,
+          "zstd_compression_level": 6
+        }
+      },
+      "webrtc": {
+        "rgb": {
+          "quality": 85,
+          "format": "JPEG"
+        }
+      }
+    },
+    "communication": {
+      "zeromq": {
+        "enabled": true,
+        "image_publish_port": 5559,
+        "status_publish_port": 5560
+      },
+      "websocket": {
+        "enabled": true,
+        "host": "0.0.0.0",
+        "port": 8767
+      },
+      "webrtc": {
+        "enabled": true,
+        "video_codec": "VP8"
+      }
+    }
+  },
+  "front_chest_camera": {
+    "camera_type": "opencv",
+    "model": "fisheye",
+    "serial_number": "1-8-7",
+    "device_index": 12,
+    "position": "FRONT_CHEST",
+    "enabled": false,
+    "binocular": true,
+    "streams": {
+      "color": {
+        "enabled": true,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      },
+      "depth": {
+        "enabled": false,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      }
+    },
+    "compression": {
+      "rgb": {
+          "quality": 85,
+          "format": "JPEG"
+      },
+      "depth": {
+          "quantization_bits": 12,
+          "zstd_compression_level": 3
+      }
+    },
+    "publisher_compression": {
+      "zeromq": {
+        "rgb": {
+          "quality": 90,
+          "format": "JPEG"
+        },
+        "depth": {
+          "quantization_bits": 16,
+          "zstd_compression_level": 6
+        }
+      },
+      "webrtc": {
+        "rgb": {
+          "quality": 85,
+          "format": "JPEG"
+        }
+      }
+    },
+    "communication": {
+      "zeromq": {
+        "enabled": true,
+        "image_publish_port": 5561,
+        "status_publish_port": 5562
+      },
+      "websocket": {
+        "enabled": true,
+        "host": "0.0.0.0",
+        "port": 8768
+      },
+      "webrtc": {
+        "enabled": true,
+        "video_codec": "VP8"
+      }
+    }
+  },
+  "back_chest_camera": {
+    "camera_type": "opencv",
+    "model": "fisheye",
+    "serial_number": "1-8-7",
+    "device_index": 14,
+    "position": "BACK_CHEST",
+    "enabled": false,
+    "binocular": true,
+    "streams": {
+      "color": {
+        "enabled": true,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      },
+      "depth": {
+        "enabled": false,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      }
+    },
+    "compression": {
+      "rgb": {
+          "quality": 85,
+          "format": "JPEG"
+      },
+      "depth": {
+          "quantization_bits": 12,
+          "zstd_compression_level": 3
+      }
+    },
+    "publisher_compression": {
+      "zeromq": {
+        "rgb": {
+          "quality": 90,
+          "format": "JPEG"
+        },
+        "depth": {
+          "quantization_bits": 16,
+          "zstd_compression_level": 6
+        }
+      },
+      "webrtc": {
+        "rgb": {
+          "quality": 85,
+          "format": "JPEG"
+        }
+      }
+    },
+    "communication": {
+      "zeromq": {
+        "enabled": true,
+        "image_publish_port": 5563,
+        "status_publish_port": 5564
+      },
+      "websocket": {
+        "enabled": true,
+        "host": "0.0.0.0",
+        "port": 8769
+      },
+      "webrtc": {
+        "enabled": true,
+        "video_codec": "VP8"
+      }
+    }
+  }
+}

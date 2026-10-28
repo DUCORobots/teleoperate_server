@@ -1,0 +1,32 @@
+{
+  "vision_system": {
+    "node_name": "humanoid_vision_system"
+  },
+  "synchronization": {
+    "sync_tolerance_ms": 5.0
+  },
+  "log_manager": {
+    "log_directory": "./logs",
+    "log_level": "INFO",
+    "rotation_size_mb": 120,
+    "retention_days": 60,
+    "compression_enabled": true,
+    "encoding": "utf-8"
+  },
+  "port_allocation": {
+    "zeromq": {
+      "base_image_port": 5555,
+      "base_status_port": 5556,
+      "config_rep_port": 60000,
+      "port_increment": 10
+    },
+    "websocket": {
+      "base_port": 8765,
+      "port_increment": 1
+    },
+    "webrtc": {
+      "base_port": 8998
+    },
+    "fallback_range": [20000, 30000]
+  }
+}

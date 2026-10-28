@@ -1,0 +1,61 @@
+{
+    "robot": {
+      "name": "rico",
+      "ip": "127.0.0.1",
+      "upper_body": true,
+      "arm_type": "p_arm",
+      "left_arm_port": 7003,
+      "right_arm_port": 7004,
+      "waist_port": 7020,
+      "head_port": 7021,
+      "left_arm_tcp_frame": "tcp_1",
+      "right_arm_tcp_frame": "tcp_1",
+      "left_arm_base_frame": "arm_1_base",
+      "right_arm_base_frame": "arm_2_base",
+      "home_arm_joint_deg": {
+        "left": [0, -40, 90, 80, -50, 30, 0],
+        "right": [0, -40, -90, 80, 50, 30, 0]
+      },
+      "home_arm_joint_deg_p": {
+        "left": [-20, 40, -45, 80, 90, -30, 20],
+        "right": [20, 40, 45, 80, -90, -30, -20]
+      },
+      "home_head_rad": [0.0, 0.0],
+      "home_half_waist_rad": [0.0],
+      "home_full_waist_rad": [0.7854, -1.5708, 0.7854, 0.0],
+      "servo": {
+        "arm_speed_min_cart": 0.2,
+        "arm_speed_max_cart": 0.8,
+        "arm_acceleration_cart": 10.0,
+        "ramp_steps": 100,
+        "home_velocity": 1.0,
+        "home_acceleration": 10.0,
+        "lookahead_time_ms": 200,
+        "gain": 25,
+        "blend": 50,
+        "waist_speed_min_joint": 0.2,
+        "waist_speed_max_joint": 0.8,
+        "waist_acceleration_joint": 5.0,
+        "waist_speed_min_cart": 0.2,
+        "waist_speed_max_cart": 1.2,
+        "waist_acceleration_cart": 4.0,
+        "head_speed_min_joint": 0.2,
+        "head_speed_max_joint": 0.8,
+        "head_acceleration_joint": 5.0
+      }
+    },
+    "end_effector": {
+      "name": "bchand",
+      "trigger_open_threshold": 5.0,
+      "left_open_primary": [0, 0, 0, 0, 0, 0],
+      "left_open_secondary": [0, 0, 0, 0, 0, 0],
+      "left_close_primary": [0, 150, 1000, 1000, 1000, 1000],
+      "left_close_secondary": [800, 1000, 1000, 1000, 1000, 1000],
+      "right_open_primary": [0, 0, 0, 0, 0, 0],
+      "right_open_secondary": [0, 0, 0, 0, 0, 0],
+      "right_close_primary": [0, 150, 1000, 1000, 1000, 1000],
+      "right_close_secondary": [800, 150, 1000, 1000, 1000, 1000],
+      "velocity_profile": [500, 500, 500, 500, 500, 500],
+      "cooldown_seconds": 1.0
+    }
+  }

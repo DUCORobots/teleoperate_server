@@ -1,0 +1,80 @@
+{
+  "camera_default": {
+    "camera_id": "default_camera",
+    "camera_type": "RealSenseCamera",
+    "model": "D435",
+    "serial_number": "",
+    "device_index": -1,
+    "position": "HEAD",
+    "enabled": true,
+    "binocular": false,
+    "streams": {
+      "color": {
+        "enabled": true,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      },
+      "depth": {
+        "enabled": true,
+        "capture_width": 640,
+        "capture_height": 480,
+        "publish_width": 640,
+        "publish_height": 480,
+        "fps": 30
+      }
+    },
+    "compression": {
+      "rgb": {
+        "quality": 85,
+        "format": "JPEG"
+      },
+      "depth": {
+        "quantization_bits": 12,
+        "zstd_compression_level": 3
+      }
+    },
+    "communication": {
+      "zeromq": {
+        "enabled": true,
+        "image_publish_port": 5555,
+        "status_publish_port": 5556,
+        "max_queue_size": 200,
+        "high_water_mark": 100
+      },
+      "websocket": {
+        "enabled": true,
+        "host": "0.0.0.0",
+        "port": 8765,
+        "max_connections": 10,
+        "max_queue_size": 200,
+        "ping_interval_sec": 30.0
+      },
+      "webrtc": {
+        "enabled": true,
+        "host": "0.0.0.0",
+        "stun_servers": ["stun:stun.l.google.com:19302"],
+        "turn_servers": [],
+        "max_bitrate_kbps": 2000,
+        "min_bitrate_kbps": 500,
+        "max_fps": 60,
+        "video_codec": "VP8",
+        "max_connections": 5,
+        "audio_enabled": false,
+        "max_queue_size": 50,
+        "ice_timeout_sec": 30.0,
+        "connection_timeout_sec": 60.0
+      },
+      "ros2": {
+        "enabled": true,
+        "camera_info_topic": "/vision/camera_info",
+        "status_topic": "/vision/camera_status",
+        "tf_frame_prefix": "vision",
+        "qos_depth": 10,
+        "qos_reliability": "RELIABLE"
+      }
+    }
+  }
+}

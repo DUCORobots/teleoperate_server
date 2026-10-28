@@ -1,0 +1,47 @@
+syntax = "proto3";
+package humanoid_vision;
+
+// 图像数据消息 - 通过ZeroMQ和WebSocket传输
+message CompressedImage {
+    string camera_id = 1;                           // 相机标识
+    ImageType image_type = 2;                       // 图像类型
+    bytes image_data = 3;                           // 压缩后的图像数据
+    uint32 original_width = 4;                      // 原始宽度
+    uint32 original_height = 5;                     // 原始高度
+    CompressionInfo compression_info = 6;           // 压缩信息
+    
+    enum ImageType {
+        UNKNOWN = 0;
+        RGB = 1;
+        DEPTH = 2;
+        INFRARED = 3;
+    }
+}
+
+// 压缩信息
+message CompressionInfo {
+    CompressionType compression_type = 1;           // 压缩类型
+
+    enum CompressionType {
+        NONE = 0;
+        JPEG = 1;
+        ZSTD_LOSSLESS = 2;
+        ZSTD_LOSSY = 3;
+        PNG = 4;
+    }
+}
+
+// 相机状态信息 - 通过所有通信通道发布
+message CameraStatus {
+    string camera_id = 1;
+    CameraHealthStatus health_status = 2;
+    double frame_rate = 3;               // 实际帧率
+    
+    enum CameraHealthStatus {
+        UNKNOWN = 0;
+        HEALTHY = 1;
+        WARNING = 2;
+        ERROR = 3;
+        OFFLINE = 4;
+    }
+}

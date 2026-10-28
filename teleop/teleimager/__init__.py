@@ -1,0 +1,1 @@
+from .src.teleimager.humanoid_image_client import HumanoidImageClient as ImageClient
